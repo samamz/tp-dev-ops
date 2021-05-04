@@ -44,3 +44,15 @@ jobs:
         
       - name: chmod
         run : chmod +x mvnw && npm run ci:backend:test
+        
+      - name : jar
+        run : ./mvnw -ntp verify -DskipTests --batch-mode "-Pprod" "-Pe2e" "-Denforcer.skip=true"*
+        
+      - name : bdd
+        run : npm run ci:e2e:prepare:docker
+        
+      - name : tests
+        run : npm run ci:e2e:run
+        
+      - name : fin
+        run : npm run ci:e2e:teardown
