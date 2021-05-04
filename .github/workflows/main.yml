@@ -41,3 +41,6 @@ jobs:
 
       - name: npmrun
         run: npm run ci:frontend:test
+        
+      - name: chmod
+        run : chmod +x mvnw && npm run ci:backend:test
