@@ -56,3 +56,9 @@ jobs:
         
       - name : fin
         run : npm run ci:e2e:teardown
+        
+      - name: creationgit
+        run : git checkout branche1
+        
+      - name: origingit
+        run : git push --set-upstream origin branche1
